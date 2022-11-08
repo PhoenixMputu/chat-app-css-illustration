@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  background-color: hsl(270, 20%, 96%);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-style: 2.5rem;
+}
+
+.background-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 0 0 50rem 50rem;
+  height: 85vh;
+  width: 450px;
+  background: linear-gradient(
+    to top right,
+    hsl(264, 100%, 61%),
+    hsl(293, 100%, 63%)
+  );
+  transform: translate(-20%, 0);
+}
+.background-right {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border-radius: 50rem 0 0 0;
+  height: 80vh;
+  width: 300px;
+  background: linear-gradient(
+    to bottom left,
+    rgba(136, 56, 255, 0.1),
+    rgba(233, 66, 255, 0.1)
+  );
+}
+.main {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 55rem;
+  z-index: 10;
+}
+.smartphone {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  width: 16rem;
+  background-color: hsl(270, 20%, 96%);
+  border: 0.8rem white solid;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.smartphone:before {
+  content: "";
+  display: block;
+  width: 8rem;
+  height: 2rem;
+  position: absolute;
+  inset: 0.2rem 7.2rem;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 20rem;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem 0.5rem 0.2rem 0.5rem;
+  background: linear-gradient(
+    to right,
+    hsl(264, 100%, 61%),
+    hsl(293, 100%, 63%)
+  );
+  border-radius: 0.5rem;
+}
+.sub-heading {
+  display: inline-block;
+  color: hsl(276, 100%, 81%);
+  font-size: 0.6rem;
+}
+.avatar-img {
+  width: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin-right: 0.5rem;
+}
+.dog-img {
+  width: 2.5rem;
+  border-radius: 20%;
+}
+.received-msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(276, 55%, 52%);
+  align-self: flex-start;
+  max-width: 70%;
+  background-color: rgba(216, 158, 255, 0.25);
+  border-radius: 1rem 1rem 1rem 0;
+  padding: 0.5rem;
+  margin: 0.3rem;
+  opacity: 0;
+  font-size: 0.5rem;
+  /* animation: fade-in 1s ease; */
+}
+.received-msg:nth-of-type(2) {
+  animation: fade-in-drop 1s ease forwards;
+}
+.received-msg:nth-of-type(3) {
+  animation: fade-in-drop 1s ease 0.5s forwards;
+}
+.sent-msg:nth-of-type(4) {
+  animation: fade-in-up 1s ease 1s forwards;
+}
+.sent-msg:nth-of-type(5) {
+  animation: fade-in-up 1s ease 1.5s forwards;
+}
+.sent-msg:nth-of-type(6) {
+  animation: fade-in-up 1s ease 2s forwards;
+}
+.received-msg:nth-of-type(7) {
+  animation: fade-in-drop 1s ease 2.5s forwards;
+}
+.received-msg:nth-of-type(8) {
+  animation: fade-in-drop 1s ease 3s forwards;
+}
+.received-msg:nth-of-type(9) {
+  animation: fade-in-drop 1s ease 3.5s forwards;
+}
+.sent-msg {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: hsl(271, 15%, 43%);
+  align-self: flex-end;
+  max-width: 70%;
+  background-color: white;
+  border-radius: 1rem 1rem 0 1rem;
+  padding: 0.5rem;
+  margin: 0.3rem;
+  opacity: 0;
+  font-size: 0.5rem;
+}
+.sent-img {
+  width: 70%;
+}
+.walk-price {
+  width: 70%;
+  color: white;
+  background: linear-gradient(
+    to right,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+}
+.price {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-input {
+  flex: 1 0 90%;
+  position: relative;
+  margin: 0.5rem;
+  padding: 0.8rem;
+  border: none;
+  height: 2rem;
+  border-radius: 20rem;
+  outline: none;
+  color: hsl(206, 6%, 79%);
+}
+.chat-input:focus {
+  border: 1px solid hsl(264, 100%, 61%);
+}
+.chevron-circle-right {
+  position: absolute;
+  right: 1rem;
+  transform: rotate(-90deg) scale(1.2);
+}
+.content-right {
+  line-height: 2;
+  font-size: 1rem;
+  color: hsl(270, 7%, 64%);
+  height: 100%;
+  width: 100%;
+  max-width: 30rem;
+}
+.content-right h1 {
+  font-size: 3rem;
+  color: hsl(271, 36%, 24%);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@keyframes fade-in-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .background-left {
+    transform: translate(-45%, 0);
+  }
+  .background-right {
+    height: 60vh;
+    position: fixed;
+    bottom: 0;
+  }
+  .main {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+  .content-right {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+  .attribution {
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .background-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 0 0 50rem 50rem;
+    height: 65vh;
+    width: 300px;
+    background: linear-gradient(
+      to top right,
+      hsl(264, 100%, 61%),
+      hsl(293, 100%, 63%)
+    );
+    transform: translate(-35%, 0);
+  }
+  .background-right {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border-radius: 50rem 0 0 0;
+    height: 40vh;
+    width: 300px;
+    background: linear-gradient(
+      to bottom left,
+      rgba(136, 56, 255, 0.1),
+      rgba(233, 66, 255, 0.1)
+    );
+    transform: translate(35%, 0);
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+}
